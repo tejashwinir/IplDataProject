@@ -1,13 +1,12 @@
 let expect = require("chai").expect
 let path = require("path")
 let file = path.resolve("app.js")
-// let smapleData=path.resolve("test.csv")
 let match = require(file)
 
 describe("ipl", function () {
     // int maId=[];
-    it("number of matches played per year of all the years", function (done) {
-        let fileName = path.resolve("./test.csv")
+    Xit("number of matches played per year of all the years", function (done) {
+        let fileName = path.resolve("./question1matches.csv")
         let expectedResult = {
             '2017': 2,
             '2016': 2,
@@ -29,8 +28,8 @@ describe("ipl", function () {
 
     })
 
-    it("matches won of all teams over all the years of IPL", function (done) {
-        let fileName = path.resolve("./2ndque.csv")
+    Xit("matches won of all teams over all the years of IPL", function (done) {
+        let fileName = path.resolve("./question2.csv")
         const expectedResult = {
 
             "Royal Challengers Bangalore": {
@@ -67,54 +66,35 @@ describe("ipl", function () {
 
     })
 
-
-    it("fetching matches ids", function (done) {
-        let matches = path.resolve("./match.csv")
+    Xit("fetching match ids", async function () {
+        const matches = path.resolve("./ques3TestMatches.csv")
         const expectedResult = [
-            "577", "578","579","580","581","582","583",
-            "584","585", "586","587", "588", "589", "590",
+            "577", "578", "579", "580", "581", "582", "583",
+            "584", "585", "586", "587", "588", "589", "590",
         ]
-        let year = "2016"
-        match.getMatchID(matches, year).then(function (data) {
-            try {
-                expect(data).deep.equals(expectedResult);
-                done();
-            } catch (e) {
-                done(e);
-            }
-        })
+        const year = "2016"
+    
+        const result = await match.getMatchID(matches, year)
+        expect(result).deep.equal(expectedResult)
+
+        const failureResult = [0, 1]
+        expect(failureResult).not.deep.equal(expectedResult)
 
     })
 
 
-    // it("For the year 2016 plot the extra runs conceded per team.",function(done) {
-    //     let deliveries=path.resolve("./delivery.csv")
-    //     const expectedResult={
-    //         'Rising Pune Supergiants': 108,
-    //         'Mumbai Indians': 102,
-    //         'Kolkata Knight Riders': 122,
-    //         'Delhi Daredevils': 106,
-    //         'Gujarat Lions': 98,
-    //         'Kings XI Punjab': 100,
-    //         'Sunrisers Hyderabad': 107,
-    //         'Royal Challengers Bangalore': 156 
-    //     }
-    //     match.extra_runs(deliveries,matches).then(function(data){
-    //         try{
-    //             expect(data).deep.equals(expectedResult);
-    //             console.log(data);
-    //             console.log(expectedResult);
+   Xit("For the year 2016 plot the extra runs conceded per team.", async function () {
+        let deliveriesFileName = path.resolve("./ques3deliveries.csv")
 
+        const match_ids = [1, 2]
+        const expectedResult = {
+            'Sunrisers Hyderabad': 6,
+            'Royal Challengers Bangalore': 3
+        }
+        const result = await match.extra_runs(deliveriesFileName, match_ids)
+        expect(result).deep.equals(expectedResult);
 
-    //             done();
-    //         }
-    //         catch(e)
-    //         {
-    //             done(e);
-    //         }
-    //     })
-
-    //    })
+    })
 
 
 

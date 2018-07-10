@@ -1,7 +1,25 @@
+const fs = require('fs')
+const path = require('path')
+const matches = path.resolve("matches.csv")
+let year = "2016"
+getmatchNums(matches);
+getMatchwon(matches);
+getMatchID(matches,year)
 
+getMatchID(dataset, "2016").then(function (data) {
+        let deliveriesFileName=path.resolve("deliveries.csv")
+    extraRuns(deliveriesFileName, data)
+    
+})
+
+getMatchID(dataset, "2015").then(function (data) {
+    let deliveriesFileName=path.resolve("deliveries.csv")
+// extraRuns(deliveriesFileName, data)
+
+})
+
+//first question
 function getmatchNums(dataset) {
-    console.log(dataset);
-    let fs = require("fs");
     return new Promise(function (resolve, reject) {
         let matchesPerSeason = {}
         fs.readFile(dataset, function (err, data) {
@@ -20,22 +38,38 @@ function getmatchNums(dataset) {
                     }
                 })
             }
-            //console.log(matchesPerSeason);
             resolve(matchesPerSeason)
         })
     })
 
 }
 
+//first question object converting to Json
+function convertingtoJson(){
+    let matchesData = require('path').resolve("matches.csv");
+    getmatchNums(matchesData).then(async function (matchesData) {
+       let matchperyear = [];
+       for (key in matchesData) {
+           let matchAndSeason = {};
+           matchAndSeason['label'] = key;
+           matchAndSeason['y'] = matchesData[key];
+           matchperyear.push(matchAndSeason);
+       }
+       require('fs').writeFile("wonMatchesInAllYear.json", JSON.stringify(matchperyear, null, 4), (err) => {
+           if (err) {
+               console.log(err);
+               return;
+           }
+           console.log("wonMatchesInAllYear File Created");
+       });
+   })
 
-// const fs = require('fs')
-// const path = require('path')
-// const dataset = path.resolve("2ndque.csv")
-// let year = "2016"
-// getMatchwon(dataset, year)
+}
+convertingtoJson();
 
+
+//second question 
 function getMatchwon(matches) {
-    var fs = require("fs");
     var teamNames = {}
     return new Promise(function (resolve, reject) {
         fs.readFile(matches, function (err, matches) {
@@ -60,20 +94,15 @@ function getMatchwon(matches) {
                 })
 
 
-            }
-
-            console.log(teamNames);
-            
+            }            
             resolve(teamNames)
         })
     })
 }
 
+
 //3.For the year 2016 plot the extra runs conceded per team.
 function getMatchID(matches, year) {
-    var fs = require("fs");
-    var path = require("path");
-    var matches = path.resolve("match1.csv");
     var matchid = [];
     return new Promise(function (resolve, reject) {
         fs.readFile(matches, function (err, matches) {
@@ -83,49 +112,54 @@ function getMatchID(matches, year) {
                 matches.toString().split("\n").forEach(function (line, index, arr) {
                     if (index !== 0) {
                         const match = line.split(",");
-
                         if (year == match[1]) {
                             matchid.push(match[0]);
                         }
                     }
                 })
             }
-            resolve(matchid)
+            resolve(matchid);
         })
     })
 }
 
-function extra_runs(delivery, year) {
-    return new Promise(function (resolve, reject) {
-        let matchesPerSeason = {}
-        console.log("jasgd");
+const dataset = path.resolve("matches.csv")
 
-        fs.readFile(dataset, function (err, data) {
+function extraRuns(deliveriesFileName, match_ids) {
+
+    return new Promise(function (resolve, reject) {
+        let extraRunsPerTeam = {}
+        fs.readFile(deliveriesFileName, function (err, data) {
             if (err) {
                 reject(err)
             } else {
                 data.toString().split("\n").forEach(function (line, index, arr) {
                     if (index !== 0) {
-                        const match = line.split(",")
-                        const season = match[1]
-                        if (matchesPerSeason.hasOwnProperty(season)) {
-                            matchesPerSeason[season]++
+                        const delivery = line.split(",")                                                                    
+                        if(match_ids.includes(delivery[0])){
+                            const bowlingTeam = delivery[3]
+
+                            const extraRuns = delivery[16]
+                        if (extraRunsPerTeam.hasOwnProperty(bowlingTeam)) {
+                            extraRunsPerTeam[bowlingTeam] += Number(extraRuns)
                         } else {
-                            matchesPerSeason[season] = 1
+                            extraRunsPerTeam[bowlingTeam] = Number(extraRuns)
                         }
+                    }
                     }
                 })
             }
-            resolve(matchesPerSeason)
+            console.log(extraRunsPerTeam);
+            
+            resolve(extraRunsPerTeam)
         })
     })
 }
 
 
-
 module.exports = {
     getmatchNums: getmatchNums,
     getMatchID: getMatchID,
-    extra_runs: extra_runs,
+    extraRuns: extraRuns,
     getMatchwon: getMatchwon
 }
