@@ -1,20 +1,12 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 const matches = path.resolve("matches.csv");
 const deliveries = path.resolve("deliveries.csv");
-let year = "2016"
+let year = "2016";
 getMatchwon(matches);
 
 
-getMatchID(matches, "2016").then(function (data) {
-    let deliveriesFileName = path.resolve("deliveries.csv");
-    convertingtoJsonQue3(deliveriesFileName, data);
-})
 
-getMatchID(matches, "2015").then(function (data) {
-    let deliveriesFileName = path.resolve("deliveries.csv");
-    convertingtoJsonQue4(deliveriesFileName, data);
-})
 
 //--------------------------------first question
 function getmatchNums(dataset) {
@@ -44,7 +36,7 @@ function getmatchNums(dataset) {
 
 //-------------------------first question object converting to Json
 function convertingtoJson() {
-    let matchesData = require('path').resolve("matches.csv");
+    let matchesData = require("path").resolve("matches.csv");
     getmatchNums(matchesData).then(async function (matchesData) {
         let matchperyear = [];
         for (key in matchesData) {
@@ -53,7 +45,7 @@ function convertingtoJson() {
             matchAndSeason['y'] = matchesData[key];
             matchperyear.push(matchAndSeason);
         }
-        require('fs').writeFile("./Jsonfiles/wonMatchesInAllYear.json", JSON.stringify(matchperyear, null, 4), (err) => {
+        require("fs").writeFile("./Jsonfiles/wonMatchesInAllYear.json", JSON.stringify(matchperyear, null, 4), (err) => {
             if (err) {
                 console.log(err);
                 return;
@@ -92,9 +84,9 @@ function getMatchwon(matches) {
                 })
             }
             let matchs = [];
-            for (key in teamNames) {
+            for (let key in teamNames) {
                 let arr = [];
-                for (innerKey in teamNames[key]) {
+                for (let innerKey in teamNames[key]) {
                     let obj = {
                         y: teamNames[key][innerKey],
                         label: innerKey
@@ -130,7 +122,7 @@ function getMatchID(matches, year) {
                 matches.toString().split("\n").forEach(function (line, index, arr) {
                     if (index !== 0) {
                         const match = line.split(",");
-                        if (year == match[1]) {
+                        if (year === match[1]) {
                             matchid.push(parseInt(match[0]));
                         }
                     }
@@ -179,11 +171,11 @@ function convertingtoJsonQue3(deliveriesFileName, match_ids) {
         let matchperyear = [];
         for (key in matchesData) {
             let matchAndSeason = {};
-            matchAndSeason['label'] = key;
-            matchAndSeason['y'] = matchesData[key];
+            matchAndSeason["label"] = key;
+            matchAndSeason["y"] = matchesData[key];
             matchperyear.push(matchAndSeason);
         }
-        require('fs').writeFile("./Jsonfiles/extraRunsConceded.json", JSON.stringify(matchperyear, null, 4), (err) => {
+        require("fs").writeFile("./Jsonfiles/extraRunsConceded.json", JSON.stringify(matchperyear, null, 4), (err) => {
             if (err) {
                 console.log(err);
                 return;
@@ -208,7 +200,7 @@ function economicalRate(deliveries, matchId) {
             } else {
                 data.toString().split("\n").forEach(function (line, index, arr) {
                     if (index !== 0) {
-                        const delivery = line.split(",")
+                        const delivery = line.split(",");
                         if (matchId.includes(parseInt(delivery[0]))) {
                             var player = delivery[8];
                             if (!total_runs[player]) {
@@ -217,8 +209,8 @@ function economicalRate(deliveries, matchId) {
                                     "id": delivery[0],
                                     "total_run": 0,
                                     "balls": 0,
-                                    'over': 0,
-                                    'economic_rate': 0
+                                    "over": 0,
+                                    "economic_rate": 0
                                 };
                             }
                             total_runs[player].total_run += parseInt(delivery[17]);
@@ -249,8 +241,8 @@ function economicalRate(deliveries, matchId) {
                 for (var prop in playerObject) {
                     if (playerObject.hasOwnProperty(prop)) {
                         arr.push({
-                            'key': prop,
-                            'value': playerObject[prop]
+                            "key": prop,
+                            "value": playerObject[prop]
                         });
                     }
                 }
@@ -280,11 +272,11 @@ function convertingtoJsonQue4(deliveries, matchId) {
         let matchperyear = [];
         for (key in matchesData) {
             let matchAndSeason = {};
-            matchAndSeason['label'] = key;
-            matchAndSeason['y'] = matchesData[key];
+            matchAndSeason["label"] = key;
+            matchAndSeason["y"] = matchesData[key];
             matchperyear.push(matchAndSeason);
         }
-        require('fs').writeFile("./Jsonfiles/economicRate.json", JSON.stringify(matchperyear, null, 4), (err) => {
+        require("fs").writeFile("./Jsonfiles/economicRate.json", JSON.stringify(matchperyear, null, 4), (err) => {
             if (err) {
                 console.log(err);
                 return;
@@ -293,7 +285,15 @@ function convertingtoJsonQue4(deliveries, matchId) {
         });
     })
 }
+getMatchID(matches, "2016").then(function (data) {
+    let deliveriesFileName = path.resolve("deliveries.csv");
+    convertingtoJsonQue3(deliveriesFileName, data);
+})
 
+getMatchID(matches, "2015").then(function (data) {
+    let deliveriesFileName = path.resolve("deliveries.csv");
+    convertingtoJsonQue4(deliveriesFileName, data);
+})
 
 module.exports = {
     getmatchNums: getmatchNums,
