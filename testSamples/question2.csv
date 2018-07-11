@@ -1,0 +1,10 @@
+id,season,city,date,team1,team2,toss_winner,toss_decision,result,dl_applied,winner,win_by_runs,win_by_wickets,player_of_match,venue,umpire1,umpire2,umpire3
+57,2017,Hyderabad,2015-05-17,Sunrisers Hyderabad,Mumbai Indians, Sunrisers Hyderabad,bat, normal,0,Kolkata Knight Riders,0,9,MJ McClenaghanRajiv Gandhi International Stadium, UppalCB Gaffaney K Srinath
+58,2017,Hyderabad,2015-05-17,Sunrisers Hyderabad,Mumbai Indians,Sunrisers Hyderabad, bat,normal,0,Mumbai Indians,0,9,MJ McClenaghanRajiv Gandhi International Stadium, UppalCB Gaffaney K Srinath
+59,2017,Mumbai,2015-05-19,Mumbai Indians,Chennai Super Kings , Mumbai Indians, bat,normal,0,Mumbai Indians,1,0,KA Pollard Wankhede StadiumHDPK DharmasenaRK Illingworth
+80,2008,Pune,2015-05-20,Royal Challengers Bangalore,Rajasthan Royals,Royal Challengers Bangalore,bat,normal,0,Royal Challengers Bangalore,0,0,AB de VilliersMaharashtra Cricket Association StadiumAK ChaudharyC Shamshuddin
+81,2008,Ranchi,2015-05-22,Royal Challengers Bangalore,Chennai Super Kings ,Kings XI Punjab , field,normal,0,Kings XI Punjab, 9,3,A NehraJSCA International Stadium ComplexAK ChaudharyCB Gaffaney
+173,2009,Kolkata,2015-05-24,Mumbai Indians,Chennai Super Kings , Royal Challengers Bangalore,field,normal,0,Royal Challengers Bangalore, 0,0,RG Sharma, Eden GardensHDPK DharmasenaRK Illingworth
+174,2009,Mumbai,2016-04-09,Mumbai Indians,Rising Pune Supergiants,Deccan Chargers, bat, normal,0,Deccan Chargers, 6,9,AM Rahane, Wankhede Stadium HDPK DharmasenaCK Nandan
+175,2010,Kolkata,2016-04-10,Delhi Daredevils,Kolkata Knight Riders,Kolkata Knight Riders,field,normal,0,Kolkata Knight Riders,11,9,AD Russell, Eden GardensS Ravi C Shamshuddin
+176,2010,Chandigarh2016-04-11,Kings XI Punjab,Gujarat Lions,Mumbai Indians,field,normal,0,,Mumbai Indians,4,5,AJ Finch, Punjab Cricket Association IS Bindra Stadium, MohaliAK ChaudharyVA Kulkarni

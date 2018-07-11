@@ -1,0 +1,421 @@
+[
+    {
+        "teamNames": "Sunrisers Hyderabad",
+        "label": [
+            {
+                "y": 10,
+                "label": "2013"
+            },
+            {
+                "y": 6,
+                "label": "2014"
+            },
+            {
+                "y": 7,
+                "label": "2015"
+            },
+            {
+                "y": 11,
+                "label": "2016"
+            },
+            {
+                "y": 8,
+                "label": "2017"
+            }
+        ]
+    },
+    {
+        "teamNames": "Rising Pune Supergiant",
+        "label": [
+            {
+                "y": 10,
+                "label": "2017"
+            }
+        ]
+    },
+    {
+        "teamNames": "Kolkata Knight Riders",
+        "label": [
+            {
+                "y": 6,
+                "label": "2008"
+            },
+            {
+                "y": 3,
+                "label": "2009"
+            },
+            {
+                "y": 7,
+                "label": "2010"
+            },
+            {
+                "y": 8,
+                "label": "2011"
+            },
+            {
+                "y": 12,
+                "label": "2012"
+            },
+            {
+                "y": 6,
+                "label": "2013"
+            },
+            {
+                "y": 11,
+                "label": "2014"
+            },
+            {
+                "y": 7,
+                "label": "2015"
+            },
+            {
+                "y": 8,
+                "label": "2016"
+            },
+            {
+                "y": 9,
+                "label": "2017"
+            }
+        ]
+    },
+    {
+        "teamNames": "Kings XI Punjab",
+        "label": [
+            {
+                "y": 10,
+                "label": "2008"
+            },
+            {
+                "y": 7,
+                "label": "2009"
+            },
+            {
+                "y": 4,
+                "label": "2010"
+            },
+            {
+                "y": 7,
+                "label": "2011"
+            },
+            {
+                "y": 8,
+                "label": "2012"
+            },
+            {
+                "y": 8,
+                "label": "2013"
+            },
+            {
+                "y": 12,
+                "label": "2014"
+            },
+            {
+                "y": 3,
+                "label": "2015"
+            },
+            {
+                "y": 4,
+                "label": "2016"
+            },
+            {
+                "y": 7,
+                "label": "2017"
+            }
+        ]
+    },
+    {
+        "teamNames": "Royal Challengers Bangalore",
+        "label": [
+            {
+                "y": 4,
+                "label": "2008"
+            },
+            {
+                "y": 9,
+                "label": "2009"
+            },
+            {
+                "y": 8,
+                "label": "2010"
+            },
+            {
+                "y": 10,
+                "label": "2011"
+            },
+            {
+                "y": 8,
+                "label": "2012"
+            },
+            {
+                "y": 9,
+                "label": "2013"
+            },
+            {
+                "y": 5,
+                "label": "2014"
+            },
+            {
+                "y": 8,
+                "label": "2015"
+            },
+            {
+                "y": 9,
+                "label": "2016"
+            },
+            {
+                "y": 3,
+                "label": "2017"
+            }
+        ]
+    },
+    {
+        "teamNames": "Mumbai Indians",
+        "label": [
+            {
+                "y": 7,
+                "label": "2008"
+            },
+            {
+                "y": 5,
+                "label": "2009"
+            },
+            {
+                "y": 11,
+                "label": "2010"
+            },
+            {
+                "y": 10,
+                "label": "2011"
+            },
+            {
+                "y": 10,
+                "label": "2012"
+            },
+            {
+                "y": 13,
+                "label": "2013"
+            },
+            {
+                "y": 7,
+                "label": "2014"
+            },
+            {
+                "y": 10,
+                "label": "2015"
+            },
+            {
+                "y": 7,
+                "label": "2016"
+            },
+            {
+                "y": 12,
+                "label": "2017"
+            }
+        ]
+    },
+    {
+        "teamNames": "Delhi Daredevils",
+        "label": [
+            {
+                "y": 7,
+                "label": "2008"
+            },
+            {
+                "y": 10,
+                "label": "2009"
+            },
+            {
+                "y": 7,
+                "label": "2010"
+            },
+            {
+                "y": 4,
+                "label": "2011"
+            },
+            {
+                "y": 11,
+                "label": "2012"
+            },
+            {
+                "y": 3,
+                "label": "2013"
+            },
+            {
+                "y": 2,
+                "label": "2014"
+            },
+            {
+                "y": 5,
+                "label": "2015"
+            },
+            {
+                "y": 7,
+                "label": "2016"
+            },
+            {
+                "y": 6,
+                "label": "2017"
+            }
+        ]
+    },
+    {
+        "teamNames": "Gujarat Lions",
+        "label": [
+            {
+                "y": 9,
+                "label": "2016"
+            },
+            {
+                "y": 4,
+                "label": "2017"
+            }
+        ]
+    },
+    {
+        "teamNames": "Chennai Super Kings",
+        "label": [
+            {
+                "y": 9,
+                "label": "2008"
+            },
+            {
+                "y": 8,
+                "label": "2009"
+            },
+            {
+                "y": 9,
+                "label": "2010"
+            },
+            {
+                "y": 11,
+                "label": "2011"
+            },
+            {
+                "y": 10,
+                "label": "2012"
+            },
+            {
+                "y": 12,
+                "label": "2013"
+            },
+            {
+                "y": 10,
+                "label": "2014"
+            },
+            {
+                "y": 10,
+                "label": "2015"
+            }
+        ]
+    },
+    {
+        "teamNames": "Rajasthan Royals",
+        "label": [
+            {
+                "y": 13,
+                "label": "2008"
+            },
+            {
+                "y": 6,
+                "label": "2009"
+            },
+            {
+                "y": 6,
+                "label": "2010"
+            },
+            {
+                "y": 6,
+                "label": "2011"
+            },
+            {
+                "y": 7,
+                "label": "2012"
+            },
+            {
+                "y": 11,
+                "label": "2013"
+            },
+            {
+                "y": 7,
+                "label": "2014"
+            },
+            {
+                "y": 7,
+                "label": "2015"
+            }
+        ]
+    },
+    {
+        "teamNames": "Deccan Chargers",
+        "label": [
+            {
+                "y": 2,
+                "label": "2008"
+            },
+            {
+                "y": 9,
+                "label": "2009"
+            },
+            {
+                "y": 8,
+                "label": "2010"
+            },
+            {
+                "y": 6,
+                "label": "2011"
+            },
+            {
+                "y": 4,
+                "label": "2012"
+            }
+        ]
+    },
+    {
+        "teamNames": "Pune Warriors",
+        "label": [
+            {
+                "y": 4,
+                "label": "2011"
+            },
+            {
+                "y": 4,
+                "label": "2012"
+            },
+            {
+                "y": 4,
+                "label": "2013"
+            }
+        ]
+    },
+    {
+        "teamNames": "Kochi Tuskers Kerala",
+        "label": [
+            {
+                "y": 6,
+                "label": "2011"
+            }
+        ]
+    },
+    {
+        "teamNames": "",
+        "label": [
+            {
+                "y": 1,
+                "label": "2011"
+            },
+            {
+                "y": 2,
+                "label": "2015"
+            }
+        ]
+    },
+    {
+        "teamNames": "Rising Pune Supergiants",
+        "label": [
+            {
+                "y": 5,
+                "label": "2016"
+            }
+        ]
+    }
+]
