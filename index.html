@@ -6,10 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .main_container{
+            display: grid;
+            grid-template-columns: 1fr,1fr;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <div class="main_container">
+        <div id="chartContainer1" style="height: 300px; width: 100%;"></div>
+        <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+        <div id="chartContainer3" style="height: 300px; width: 100%;"></div>
+        <div id="chartContainer4" style="height: 300px; width: 100%;"></div>
+    </div>
+
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="highchart.js"></script>
 </body>

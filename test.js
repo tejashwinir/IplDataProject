@@ -4,9 +4,8 @@ let file = path.resolve("app.js")
 let match = require(file)
 
 describe("ipl", function () {
-    // int maId=[];
-    Xit("number of matches played per year of all the years", function (done) {
-        let fileName = path.resolve("./question1matches.csv")
+    xit("number of matches played per year of all the years", function (done) {
+        let fileName = path.resolve("./testSmaples/question1matches.csv")
         let expectedResult = {
             '2017': 2,
             '2016': 2,
@@ -16,10 +15,6 @@ describe("ipl", function () {
         match.getmatchNums(fileName).then(function (data) {
             try {
                 expect(data).deep.equals(expectedResult);
-                console.log(data);
-                console.log(expectedResult);
-
-
                 done();
             } catch (e) {
                 done(e);
@@ -28,8 +23,8 @@ describe("ipl", function () {
 
     })
 
-    Xit("matches won of all teams over all the years of IPL", function (done) {
-        let fileName = path.resolve("./question2.csv")
+    xit("matches won of all teams over all the years of IPL", function (done) {
+        let fileName = path.resolve("./testSmaples/question2.csv")
         const expectedResult = {
 
             "Royal Challengers Bangalore": {
@@ -66,14 +61,14 @@ describe("ipl", function () {
 
     })
 
-    Xit("fetching match ids", async function () {
-        const matches = path.resolve("./ques3TestMatches.csv")
+    xit("fetching match ids", async function () {
+        const matches = path.resolve("./testSmaples/ques3TestMatches.csv")
         const expectedResult = [
             "577", "578", "579", "580", "581", "582", "583",
             "584", "585", "586", "587", "588", "589", "590",
         ]
         const year = "2016"
-    
+
         const result = await match.getMatchID(matches, year)
         expect(result).deep.equal(expectedResult)
 
@@ -83,8 +78,8 @@ describe("ipl", function () {
     })
 
 
-   Xit("For the year 2016 plot the extra runs conceded per team.", async function () {
-        let deliveriesFileName = path.resolve("./ques3deliveries.csv")
+    xit("For the year 2016 plot the extra runs conceded per team.", async function () {
+        let deliveriesFileName = path.resolve("./testSmaples/ques3deliveries.csv")
 
         const match_ids = [1, 2]
         const expectedResult = {
@@ -93,9 +88,24 @@ describe("ipl", function () {
         }
         const result = await match.extra_runs(deliveriesFileName, match_ids)
         expect(result).deep.equals(expectedResult);
-
     })
 
+    xit(" For the year 2015 plot the top economical bowlers", async function () {
+        let deliveriesFileName = path.resolve("./testSmaples/question4.csv")
+        const match_ids = [536, 553];
+        const expectedResult = [{
+                player: 'Sandeep Sharma',
+                economic_rate: 6
+            },
+            {
+                player: "AM Rahane",
+                economic_rate: 1.5,
+            }
+        ]
+        const result = await match.economicalRate(deliveriesFileName, match_ids)
+        expect(result).deep.equals(expectedResult);
+
+    })
 
 
 })
