@@ -1,20 +1,19 @@
-const fs = require('fs')
-const path = require('path')
-const matches = path.resolve("matches.csv")
-const deliveries = path.resolve("deliveries.csv")
+const fs = require('fs');
+const path = require('path');
+const matches = path.resolve("matches.csv");
+const deliveries = path.resolve("deliveries.csv");
 let year = "2016"
 getMatchwon(matches);
-getMatchID(matches, year);
 
 
 getMatchID(matches, "2016").then(function (data) {
-    let deliveriesFileName = path.resolve("deliveries.csv")
-    convertingtoJsonQue3(deliveriesFileName, data)
+    let deliveriesFileName = path.resolve("deliveries.csv");
+    convertingtoJsonQue3(deliveriesFileName, data);
 })
 
 getMatchID(matches, "2015").then(function (data) {
-    let deliveriesFileName = path.resolve("deliveries.csv")
-    convertingtoJsonQue4(deliveriesFileName, data)
+    let deliveriesFileName = path.resolve("deliveries.csv");
+    convertingtoJsonQue4(deliveriesFileName, data);
 })
 
 //--------------------------------first question
@@ -27,17 +26,17 @@ function getmatchNums(dataset) {
             } else {
                 data.toString().split("\n").forEach(function (line, index, arr) {
                     if (index !== 0) {
-                        const match = line.split(",")
-                        const season = match[1]
+                        const match = line.split(",");
+                        const season = match[1];
                         if (matchesPerSeason.hasOwnProperty(season)) {
-                            matchesPerSeason[season]++
+                            matchesPerSeason[season]++;
                         } else {
-                            matchesPerSeason[season] = 1
+                            matchesPerSeason[season] = 1;
                         }
                     }
                 })
             }
-            resolve(matchesPerSeason)
+            resolve(matchesPerSeason);
         })
     })
 
@@ -115,8 +114,7 @@ function getMatchwon(matches) {
                 }
                 console.log("extraRunsConceded File Created");
             });
-            console.log(teamNames);
-            resolve(teamNames)
+            resolve(teamNames);
         })
     })
 }
@@ -142,7 +140,7 @@ function getMatchID(matches, year) {
         })
     })
 }
-
+getMatchID(matches, year);
 
 //--------------third question: For the year 2016 plot the extra runs conceded per team.
 function extraRuns(deliveriesFileName, match_ids) {
