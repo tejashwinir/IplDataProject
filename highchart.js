@@ -71,7 +71,7 @@ function displayHighchart() {
             dataPoints: highchartContents2[i][1]
         }
         chartObj.push(obj);
-    }   
+    }
     var chart2 = new CanvasJS.Chart("chartContainer2", {
         title: {
             text: "IPL Team."
@@ -91,7 +91,7 @@ function displayHighchart() {
         animationEnabled: true,
         title: {
             text: "In the year 2016 the extra runs conceded per team"
-        
+
         },
         subtitles: [{
             text: ""

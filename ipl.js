@@ -66,11 +66,7 @@ function getMatchwon(matches) {
                     if (index !== 0) {
                         const match = line.split(",");
                         const year = match[1];
-                        // console.log(year);
-                        
-                        const winner = match[10]; //10
-                        console.log(winner);
-                        
+                        const winner = match[10]; 
                         if (teamNames.hasOwnProperty(winner)) {
                             if (teamNames[winner].hasOwnProperty(year))
                                 teamNames[winner][year]++;
@@ -105,8 +101,6 @@ function getMatchwon(matches) {
                     return;
                 }
             });
-            console.log(teamNames);
-            
             resolve(teamNames);
         })
     })
@@ -225,7 +219,6 @@ function economyRate(deliveries, matchId) {
                 })
             }
             economyRate = calculatingEconomyRate(temp_player, total_runs)
-            console.log(economyRate);    
             resolve(economyRate);
         })
     })

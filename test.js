@@ -4,7 +4,7 @@ let file = path.resolve("ipl.js")
 let match = require(file)
 
 describe("ipl", function () {
-    xit("number of matches played per year of all the years", function (done) {
+    it("number of matches played per year of all the years", function (done) {
         let fileName = path.resolve("./testSamples/question1matches.csv");
         let expectedResult = {
             '2017': 2,
@@ -59,7 +59,7 @@ describe("ipl", function () {
 
     })
 
-    xit("fetching match ids", async function () {
+    it("fetching match ids", async function () {
         const matches = path.resolve("./testSamples/ques3TestMatches.csv")
         const expectedResult = [
             577, 578, 579, 580, 581, 582, 583,
@@ -74,7 +74,7 @@ describe("ipl", function () {
     })
 
 
-    xit("For the year 2016 plot the extra runs conceded per team.", async function () {
+    it("For the year 2016 plot the extra runs conceded per team.", async function () {
         let deliveriesFileName = path.resolve("./testSamples/ques3deliveries.csv");
 
         const match_ids = [1, 2];
@@ -86,7 +86,7 @@ describe("ipl", function () {
         expect(result).deep.equals(expectedResult);
     })
 
-   xit(" For the year 2015 plot the top economical bowlers", async function () {
+    it(" For the year 2015 plot the top economical bowlers", async function () {
         let deliveriesFileName = path.resolve("./testSamples/question4.csv");
         const match_ids = [536, 553];
         const expectedResult = {
@@ -95,14 +95,12 @@ describe("ipl", function () {
         }
 
         const result = await match.economyRate(deliveriesFileName, match_ids);
-        console.log(result);
-        
         expect(result).deep.equals(expectedResult);
 
     })
 
 
-    xit("highest six by batman", function (done) {
+    it("highest six by batman", function (done) {
         let fileName = path.resolve("./testSamples/question5.csv");
 
 
